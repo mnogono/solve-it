@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc1rin2hpvjfk"]
+
+[ext_resource type="Script" uid="uid://c72tu00nsbjvs" path="res://Levels/level_1.gd" id="1_n0qsc"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_n0qsc")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 77.0
+offset_top = 464.0
+offset_right = 898.0
+offset_bottom = 495.0
+placeholder_text = "Введи ответ"
+caret_blink = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 76.0
+offset_top = 320.0
+offset_right = 901.0
+offset_bottom = 448.0
+placeholder_text = "Текст примера для решения"
+editable = false
+deselect_on_focus_loss_enabled = false
+virtual_keyboard_show_on_focus = false
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 171.0
+offset_bottom = 101.0
+text = "Очки: 0"

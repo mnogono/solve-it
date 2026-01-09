@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fcjph")
+next_scene_path = "uid://bc1rin2hpvjfk"
 
 [node name="ImagesContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true

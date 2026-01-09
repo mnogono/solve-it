@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var question = $TextEdit as TextEdit
-@onready var result = $LineEdit as LineEdit
-@onready var score = $Label as Label
+@onready var question = $Question as TextEdit
+@onready var answer = $Answer as LineEdit
+@onready var gold = $Gold as Label
 
-var score_value: int = 0
+var gold_value: int = 0
 var equation: Equation
 var difficult : int = 1
 var operator_difficult : int = 1
@@ -29,18 +29,18 @@ func inc_solved_count() -> void:
 			operator_difficult = 1
 			difficult += 1
 
-func inc_score() -> void:
-	score_value += 10 * difficult + 5 * operator_difficult
-	update_score()
+func inc_gold() -> void:
+	gold_value += 10 * difficult + 5 * operator_difficult
+	update_gold()
 	
-func update_score() -> void:
-	score.text = "Очки: %d" % score_value
+func update_gold() -> void:
+	gold.text = "Золото: %d" % gold_value
 	
-func clear_result_and_test() -> void:
-	var test = int(result.text)
-	result.text = ""
-	if equation.result == test:
-		inc_score()
+func clear_answer_and_test() -> void:
+	var test = int(answer.text)
+	answer.text = ""
+	if equation.answer == test:
+		inc_gold()
 		inc_solved_count()
 		next_equation()
 
@@ -52,10 +52,10 @@ func _unhandled_input(event: InputEvent):
 			
 		# Handle printable characters (Unicode)
 		if event.unicode != 0:
-			result.text += char(event.unicode)
+			answer.text += char(event.unicode)
 			
 		# Handle Backspace
 		elif event.keycode == KEY_BACKSPACE:
-			result.text = result.text.left(-1)
+			answer.text = answer.text.left(-1)
 		elif event.keycode == KEY_ENTER or KEY_KP_ENTER:
-			clear_result_and_test()
+			clear_answer_and_test()

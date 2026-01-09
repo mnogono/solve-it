@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0hq2id72ivc3"]
+
+[ext_resource type="Texture2D" uid="uid://cffu5dh0mw1sd" path="res://Enemies/imp/imp.png" id="1_tgimi"]
+[ext_resource type="Script" uid="uid://bhoee8vrk2r81" path="res://Enemies/imp/imp.gd" id="1_utx04"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eesy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgimi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgimi"]
+
+[node name="Imp" type="CharacterBody2D"]
+script = ExtResource("1_utx04")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eesy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tgimi")

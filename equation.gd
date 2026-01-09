@@ -4,7 +4,7 @@ extends Node
 class_name Equation
 
 var question: String
-var result: float
+var answer: float
 
 @abstract
-func test(_result: float) -> bool
+func test(v: Variant) -> bool

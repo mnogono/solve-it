@@ -30,7 +30,8 @@ func generate() -> void:
 	question = "%d %s %d" % [a, operator, b]
 	var error = expression.parse(question)
 	if error == OK:
-		result = expression.execute()
+		answer = expression.execute()
 
-func test(_result: float) -> bool:
-	return true
+func test(v: Variant) -> bool:
+	if v is not int: return false
+	return v == answer

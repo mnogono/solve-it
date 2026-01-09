@@ -22,3 +22,9 @@ func _ready() -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	open_tutorials()
+
+var idx: int = 1
+func _process(delta: float) -> void:
+	idx += 1
+	print("delta %d" % idx)
+	pass
